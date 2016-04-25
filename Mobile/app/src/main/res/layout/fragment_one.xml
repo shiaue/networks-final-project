@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:paddingBottom="@dimen/activity_vertical_margin"
+android:paddingLeft="@dimen/activity_horizontal_margin"
+android:paddingRight="@dimen/activity_horizontal_margin"
+android:paddingTop="@dimen/activity_vertical_margin"
+tools:context="info.androidhive.materialtabs.fragments.OneFragment"
+android:orientation="vertical">
+
+<!--<android.support.design.widget.AppBarLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content">-->
+<!--<android.support.v7.widget.Toolbar-->
+<!--android:id="@+id/toolbar"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="?attr/actionBarSize"-->
+<!--android:background="?attr/colorPrimary"-->
+<!--app:layout_scrollFlags="scroll|enterAlways"-->
+<!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
+
+
+<!--</android.support.design.widget.AppBarLayout>-->
+<TextView
+    android:id="@+id/textViewPhoneNo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Phone Number" />
+
+<EditText
+    android:id="@+id/editTextPhoneNo"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:inputType="phone"
+    android:digits="0123456789+"
+    android:maxLength="14"
+    />
+
+<TextView
+    android:id="@+id/textViewMessage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+<!--android:text="SMS Message" -->
+
+<android.support.design.widget.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:counterEnabled="true"
+    app:counterMaxLength="160">
+    <!--app:counterTextAppearance="@style/counterText"-->
+    <!--app:counterOverflowTextAppearance="@style/counterOverride"-->
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/SMS_Message"
+        android:inputType="textMultiLine"
+        android:id="@+id/editTextSMS"
+        android:maxLength="160"
+        />
+
+</android.support.design.widget.TextInputLayout>
+<!--<EditText-->
+<!--android:id="@+id/editTextSMS"-->
+<!--android:layout_width="fill_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--/>-->
+
+
+<Button android:id="@+id/btnSendSMS"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/Send_SMS"/>
+
+<Button android:id="@+id/btnScheduleSMS"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Schedule_SMS"/>
+
+
+</LinearLayout>

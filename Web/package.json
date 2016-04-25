@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-api-sample",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "description": "A Node.js API server for android",
+  "repository": "https://github.com/shiaue/android-auto",
+  "author": "Elton Shiau",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "connect": "^2.14.4",
+    "cookie-parser": "^1.4.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.3.0"
+  }
+}
