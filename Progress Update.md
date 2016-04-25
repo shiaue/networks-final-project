@@ -8,14 +8,6 @@
 * Specify phone number and message with character counter
 
 
-
-#### Meeting 2/3
-* Prompts user on SMS send, a way to bypass?
-* Time / Date pickers for SMS tool
-* Jhipster webapp to connect with the android app
-* clean up ui
-* Validate / format phone number field
-
 ### SMS Scheduler (tabbed activity)
 * Select Date and Time
 * Run in bg
@@ -71,17 +63,7 @@
 * Bootstrap form
 * Form validation to send properly formatted data
 
-## 03/16/16
-* Push Notifications OR Pull data consistently
-* Refresh button
 
-* Create an Android Service that does this
-* Service - always runs in background
-* Activity - only runs in the foreground
-* Email Jules White with an update on what can be "completed"
-
-* Where am I storing the data? MongoDB? Cloud?
-* Storing scheduled messages, the time, and recipient
 
 ## 04/16/16
 * Sending JSON of phone numbers to server
