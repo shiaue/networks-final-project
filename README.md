@@ -1,7 +1,7 @@
-# Progress Updates
+# Networks Final Project
 
 
-### Update 
+### Running the Application 
 ### SMS Scheduler (tabbed activity)
 * Select Date and Time
 * Run in bg
