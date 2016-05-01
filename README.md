@@ -3,9 +3,13 @@
 
 ### Running the Application 
 ### SMS Scheduler (tabbed activity)
-* Select Date and Time
-* Run in bg
-* Specify phone number and message with character counter
+* Build Android Application 
+* Upon Application Start
+	* Select the middle button "SMS AUTOMATION"
+
+* Run Node.js server
+* Go to http://localhost:8080/showContacts
+	* A list of your contacts will be displayed
 
 
 ### SMS Scheduler (tabbed activity)
@@ -98,6 +102,9 @@ curl -G -v http://localhost:8080/show
 4. Then when the third fragment loads, it will receive the phone number, message, and date / time of scheduled text.
 5. Pressing SEND on the third fragment then calls a method in the main activity that schedules via the method in the first fragment.
 
+## 04/29/2016
+* Adding sendSMS method that requires 2 parameters (String message, String number)
+* Used JADE (pug) template to dynamically display list of contacts
 
 # Future Goals
 * Pull Contact photo from contacts as well

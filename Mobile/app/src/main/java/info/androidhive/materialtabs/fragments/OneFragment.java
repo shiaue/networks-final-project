@@ -35,11 +35,13 @@ import info.androidhive.materialtabs.activity.MainActivity;
 
 
 public class OneFragment extends Fragment{
-    private OnFragmentInteractionListener mListener;
+    private OnFragmentInteractionListener1 mListener;
     Button sendSMSBtn;
     Button scheduleSMSBtn;
     EditText toPhoneNumberET;
     EditText smsMessageET;
+    public static String toPhoneNumberGlobal;
+    public static String smsMessageGlobal;
 
     public OneFragment() {
         // Required empty public constructor
@@ -61,6 +63,21 @@ public class OneFragment extends Fragment{
         } catch (Exception e) {
             Toast.makeText(getActivity(),
                     "Sending SMS failed.",
+                    Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+    }
+
+    public void sendSMSMessage(String phoneNumber, String textMessage) {
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+
+            smsManager.sendTextMessage(phoneNumber, null, textMessage, null, null);
+            Toast.makeText(getActivity(), "SMS sent.",
+                    Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toast.makeText(getActivity(),
+                    "Sending SMS failed. number: " + phoneNumber + " message: " + textMessage,
                     Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
@@ -106,9 +123,16 @@ public class OneFragment extends Fragment{
 
     }
 
+    public void scheduleTextMessage(String phoneNumber, String textMessage, String [] date_time_s)    {
+
+    }
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_one, container, false);
 
@@ -117,9 +141,12 @@ public class OneFragment extends Fragment{
 
         toPhoneNumberET = (EditText) view.findViewById(R.id.editTextPhoneNo);
         smsMessageET = (EditText) view.findViewById(R.id.editTextSMS);
+
+        toPhoneNumberGlobal = toPhoneNumberET.getText().toString();
+        smsMessageGlobal = smsMessageET.getText().toString();
         sendSMSBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                sendSMS();
+                sendSMSMessage(toPhoneNumberET.getText().toString(),smsMessageET.getText().toString());
             }
         });
 
@@ -137,7 +164,7 @@ public class OneFragment extends Fragment{
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            mListener = (OnFragmentInteractionListener) activity;
+            mListener = (OnFragmentInteractionListener1) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString() + " must implement OnFragmentInteractionListener");
         }
@@ -150,8 +177,8 @@ public class OneFragment extends Fragment{
     }
 
     // must send phone # and message to 3rd fragment
-    public interface OnFragmentInteractionListener {
-        public void onFragmentInteraction(String userContent, int size, int colorValue);
+    public interface OnFragmentInteractionListener1 {
+        public void onFragmentInteraction1(String phoneNumber, String textMessage);
     }
 
 

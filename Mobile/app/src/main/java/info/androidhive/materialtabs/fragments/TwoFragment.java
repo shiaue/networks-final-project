@@ -23,7 +23,7 @@ import info.androidhive.materialtabs.activity.IconTextTabsActivity;
 
 
 public class TwoFragment extends Fragment{
-
+    private OnFragmentInteractionListener2 mListener2;
     private int year;
     private int month;
     private int day;
@@ -116,8 +116,17 @@ public class TwoFragment extends Fragment{
             }
         });
         return view;
+
+
     }
 
-
+    public void onButtonPressed(String [] date_time_s) {
+        if (mListener2 != null) {
+            mListener2.onFragmentInteraction2(date_time_s);
+        }
+    }
+    public interface OnFragmentInteractionListener2 {
+        public void onFragmentInteraction2(String [] date_time_s);
+    }
 
 }

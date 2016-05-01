@@ -16,8 +16,9 @@ var port     = process.env.PORT || 8080;
 var app = express();
 
 // view engine setup
+//app.set('views', path.join(__dirname, '/public'));
 app.set('views', path.join(__dirname, '/public'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 
 // uncomment after placing your favicon in /public

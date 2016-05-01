@@ -1,0 +1,17 @@
+html
+    head
+        title= title
+    body
+        h1= message
+            ol
+                - console.log("jade data received")
+                - console.log(data)
+                for contact in data
+                    p
+                        li  #{contact.name}  #{contact.number}
+                        //each value, key in {contact}
+                        //    span= {value} + ': ' + {key}
+                        //    - console.log("key")
+                        //    - console.log(key)
+                        //    - console.log("value")
+                        //    - console.log(value)

@@ -21,59 +21,40 @@ var appRouter = function(app) {
     });
 
     app.get("/form", function(req,res)  {
-       res.render("views/form");
+       res.render("form");
+    });
+    app.get("/test", function(req,res)  {
+       res.render('test', { title: 'Hey', message: 'Hello there!'});
     });
 
     app.post("/contacts", function(req, res) {
         console.log(req.body);
         jsonContacts = req.body;
 
-        res.send(req.body);
+        //res.send(req.body);
+        //res.send({
+        //    phone: "8479222186",
+        //    message: "Hey what's up hello world: This text was sent from a node server!"
+        //
+        //});
     });
 
     // display a webpage
     // Build a list with the contacts
-    //
-    app.get("/show", function(req, res) {
-       res.send(jsonContacts);
+    // Need to add functionality
+    app.get("/showContacts", function(req, res) {
+        var dataString = JSON.stringify(jsonContacts);
+        console.log("JSON Object, non-stringified");
+        console.log(jsonContacts);
+        //console.log("Parsed JSON: " + JSON.parse(jsonContacts));
+
+        res.render('contact', {data: jsonContacts});
     });
 
     //another route for selected contact
 
 
 
-
-    //app.get("/account", function(req, res) {
-    //    var accountMock = {
-    //        "username": "username",
-    //        "password": "password",
-    //        "twitter": "@twitter"
-    //    };
-    //
-    //    if(!req.query.username) {
-    //        return res.send({"status": "error", "message": "missing username"});
-    //    } else if(req.query.username != accountMock.username) {
-    //        return res.send({"status": "error", "message": "wrong username"});
-    //    } else {
-    //        return res.send(accountMock);
-    //    }
-    //});
-
-    app.post("/account", function(req, res) {
-        if(!req.body.username || !req.body.password || !req.body.twitter) {
-            return res.send({"status": "error", "message": "missing a parameter"});
-        } else {
-            return res.send(req.body);
-        }
-    });
-
-    app.post("/set", function(req, res) {
-        if(!req.body.username || !req.body.password || !req.body.twitter) {
-            return res.send({"status": "error", "message": "missing a parameter"});
-        } else {
-            return res.send(req.body);
-        }
-    });
 
 
 

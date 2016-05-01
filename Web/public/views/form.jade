@@ -1,0 +1,64 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Title
+        link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+        link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css')
+        link(rel='stylesheet', href='http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css')
+        link(rel='stylesheet', href='custom.css')
+    body
+        .container
+            form#contact_form.well.form-horizontal(action=' ', method='post')
+                fieldset
+                    // Form Name
+                    legend Contact
+                    // Text input
+                    .form-group
+                        label.col-md-4.control-label First Name
+                        .col-md-4.inputGroupContainer
+                            .input-group
+                                span.input-group-addon
+                                    i.glyphicon.glyphicon-user
+                                input.form-control(name='first_name', placeholder='First Name', type='text')
+                    // Text input
+                    .form-group
+                        label.col-md-4.control-label Last Name
+                        .col-md-4.inputGroupContainer
+                            .input-group
+                                span.input-group-addon
+                                    i.glyphicon.glyphicon-user
+                                input.form-control(name='last_name', placeholder='Last Name', type='text')
+                    // Text input
+                    .form-group
+                        label.col-md-4.control-label Phone #
+                        .col-md-4.inputGroupContainer
+                            .input-group
+                                span.input-group-addon
+                                    i.glyphicon.glyphicon-earphone
+                                input.form-control(name='phone', placeholder='(845)555-1212', type='text')
+                    // Text area
+                    .form-group
+                        label.col-md-4.control-label Message
+                        .col-md-4.inputGroupContainer
+                            .input-group
+                                span.input-group-addon
+                                    i.glyphicon.glyphicon-pencil
+                                textarea.form-control(name='comment', placeholder='Project Description')
+                    // Success message
+                    #success_message.alert.alert-success(role='alert')
+                        | Success
+                        i.glyphicon.glyphicon-thumbs-up
+                        |  Thanks for contacting us, we will get back to you shortly.
+                    // Button
+                    .form-group
+                        label.col-md-4.control-label
+                        .col-md-4
+                            button.btn.btn-warning(type='submit')
+                                | Send
+                                span.glyphicon.glyphicon-send
+        // /.container
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.js')
+        script(src='custom.js')

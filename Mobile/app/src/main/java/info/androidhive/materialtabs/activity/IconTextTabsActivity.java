@@ -31,9 +31,10 @@ import info.androidhive.materialtabs.fragments.OneFragment;
 import info.androidhive.materialtabs.fragments.ThreeFragment;
 import info.androidhive.materialtabs.fragments.TwoFragment;
 
-public class IconTextTabsActivity extends AppCompatActivity implements OneFragment.OnFragmentInteractionListener{
+public class IconTextTabsActivity extends AppCompatActivity implements OneFragment.OnFragmentInteractionListener1, TwoFragment.OnFragmentInteractionListener2 {
 
     public final static String TAG = "Contacts";
+    public static String [] dateAndTime;
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -139,7 +140,7 @@ public class IconTextTabsActivity extends AppCompatActivity implements OneFragme
         // TODO Synchronizing Contacts
 
         SMSync task = new SMSync();
-//        task.execute(list);
+        task.execute(list);
 
 
     }
@@ -210,11 +211,25 @@ public class IconTextTabsActivity extends AppCompatActivity implements OneFragme
 
         inputManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
-
-    public void onFragmentInteraction(String userContent, int size, int colorValue) {
-        TwoFragment secondFragment = (TwoFragment)getSupportFragmentManager().findFragmentById(R.layout.fragment_two);
-
+    public static String schedPhoneNum = "8479222186";
+    public static String schedTextMessage = "Default SMS message";
+    public void onFragmentInteraction1(String phoneNumber, String textMessage) {
+        TwoFragment secondFragment = (TwoFragment)getSupportFragmentManager().findFragmentByTag("info.androidhive.materialtabs.fragments.TwoFragment");
+        schedPhoneNum = phoneNumber;
+        schedTextMessage = textMessage;
 //        TwoFragment.updateTextField(userContent, size, colorValue);
+    }
+
+    public void onFragmentInteraction2(String [] date_time_s)   {
+        dateAndTime = date_time_s;
+        OneFragment firstFragment = (OneFragment)getSupportFragmentManager().findFragmentByTag("info.androidhive.materialtabs.fragments.TwoFragment");
+        firstFragment.scheduleTextMessage(schedPhoneNum,schedTextMessage,date_time_s);
+
+
+//        String [] date_time_s = {hr_s, min_s, mon_s, day_s, yr_s};
+
+
+
     }
 
 }
